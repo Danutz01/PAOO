@@ -4,14 +4,14 @@
 using namespace.std;
 
 //constructor 
-ECU1::ECU1(string model, int ecuNumber, string communicationType, string position, int soft){
+ECU1::ECU1(string model, int ecuNumber, string communicationType, string position, int soft, int ecuPair){
 
     this->model = model;
     this->ecuNumber = ecuNumber;
     this->communicationType = communicationType;
     this->position = position;
     this->soft = soft;
-    ecu2 = new ECU2(ecu2Name);
+    ecu2 = new ECU2(ecuPair);
 }
 
 string ECU1::getModel(){
@@ -32,6 +32,10 @@ string ECU1::getPosition(){
 
 int ECU1::getSoft(){
     return this.soft;
+}
+
+ECU2* ECU1::getEcuPair(){
+    return this-> ecu2;
 }
 
 
@@ -71,7 +75,7 @@ ECU1& ECU1::operator = (const ECU1& other){
 ECU1::~ECU1(){
     cout<<"ECU1"<<this.model<<this.ecuNumber<<this.position<<" destroyed";
     cout<<endl;
-    if(pilot != nullptr){
+    if(ecu2 != nullptr){
         delete ecu2;
     }
 }
