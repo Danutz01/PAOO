@@ -44,6 +44,10 @@ int main(int, char **)
     cin >> ecuPair;
 
     ECU1 ecu1 = generateECU(model, ecuNumber, communicationType, position, soft, ecuPair);
-
     vectorTestingEcu1.push_back(ecu1);
+
+    ECU1 ecu3 = ECU1(ecu1);
+
+    ECU1 ecu4 = generateECU(model, ecuNumber, communicationType, position, soft, ecuPair);
+    ecu4 = ecu1;
 }
