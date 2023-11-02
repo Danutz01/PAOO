@@ -1,5 +1,7 @@
+#include <iostream>
 #include <string>
 #include "ECU2.hpp"
+using namespace std;
 
 class ECU1{
     public: ECU1(string model, int ecuNumber, string communicationType, string position, int soft, int ecuPair);
