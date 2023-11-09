@@ -57,6 +57,7 @@ ECU1::ECU1(const ECU1 &ecu1)
     this->soft = ecu1.soft;
 
     this->ecu2 = new ECU2(*(ecu1.ecu2));
+    cout << "Copy constructor" << endl;
 }
 
 // assigment operator
@@ -77,6 +78,8 @@ ECU1 &ECU1::operator=(const ECU1 &other)
     this->communicationType = other.communicationType;
     this->position = other.position;
     this->soft = other.soft;
+
+    cout << "Assigment operator" << endl;
 
     return *this;
 }
